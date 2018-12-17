@@ -29,11 +29,11 @@ struct shm_info_list_t{
 
 struct xheap_space_t{
     void*   top_chk;
+    size_t  size;    
     void*   unsorted_bin_list;
     void*   bin[0x100-1];
     int     sem_id;
     struct shm_info_list_t* shm_info_list;
-    size_t  size;    
 };
 
 struct xheap_bin_ck_t{

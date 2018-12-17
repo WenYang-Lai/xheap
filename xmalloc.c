@@ -10,7 +10,7 @@ int xheap_space_init(){
     }
 
     // init shared memory
-    shm_id = shmget(0, XHEAP_BASE_SIZE, IPC_CREAT | 0600); 
+    shm_id = shmget(0, XHEAP_BASE_SIZE, IPC_CREAT | 0600);
     xheap_space.top_chk = shmat(shm_id, 0, 0);
     xheap_space.size = XHEAP_BASE_SIZE;
     xheap_space.unsorted_bin_list = NULL; 
