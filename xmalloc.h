@@ -45,7 +45,7 @@ struct xheap_bin_ck_t{
 
 };
 
-int xheap_init();
+int xheap_space_init();
 
 void* xheap_malloc(size_t size);
 void* xheap_calloc(size_t size, size_t num);

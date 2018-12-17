@@ -3,7 +3,7 @@
 
 struct xheap_space_t xheap_space;  
 
-int xheap_init(){
+int xheap_space_init(){
     int shm_id;
     if(xheap_space.top_chk){
         return 1;
