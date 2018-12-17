@@ -1,2 +1,2 @@
 # xheap
-shared memory heap
+A work for implementing allocate memory(heap) on shared memory
