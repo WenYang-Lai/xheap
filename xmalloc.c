@@ -13,7 +13,7 @@ int xheap_init(){
     shm_id = shmget(0, XHEAP_BASE_SIZE, IPC_CREAT | 0600); 
     xheap_space.top_chk = shmat(shm_id, 0, 0);
     xheap_space.size = XHEAP_BASE_SIZE;
-    xheap_space.unsorted_bin_list = (&xheap_space.unsorted_bin_list) - 0x10; 
+    xheap_space.unsorted_bin_list = NULL; 
     *((int*)(xheap_space.top_chk+8)) = XHEAP_BASE_SIZE; 
 
     // init semaphore
@@ -37,14 +37,14 @@ void* xheap_malloc(size_t size){
     if(cks >= XHEAP_BASE_SIZE)
         return 0;
 
-    // check fast bin
+    // TODO: check fast bin
     if(cks <= FAST_BIN_SIZE){
         
     }
 
-    // check unsorted bin
-    struct xheap_bin_ck_t* ub = (struct xheap_bin_ck_t*)(xheap_space.unsorted_bin_list+0x10);
-    while(ub != &xheap_space.unsorted_bin_list){
+    // TODO: check unsorted bin
+    struct xheap_bin_ck_t* ub = (struct xheap_bin_ck_t*)(xheap_space.unsorted_bin_list);
+    while(ub != NULL){
 
     }
 
