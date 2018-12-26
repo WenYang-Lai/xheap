@@ -1,5 +1,5 @@
 CC = gcc
-CFLAG = -std=c11 -Wall -c -I./
+CFLAG = -std=c11 -Wall -c -g -I./
 
 all: xheap.o
 

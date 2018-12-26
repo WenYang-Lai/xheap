@@ -7,15 +7,17 @@
 
 #define xheap_gain_lock(sem_id) \
     if(!sem_wait((sem_id))){ \
-        perror("semaphore error!"); \
+        perror("semaphore wait error!"); \
         exit(1); \
-    }
+    } \
+    fprintf(stderr, "%d get lock\n", getpid());
 
 #define xheap_release_lock(sem_id) \
     if(!sem_signal((sem_id))){ \
-        perror("semaphore error!"); \
+        perror("semaphore signal error!"); \
         exit(1); \
-    }
+    }   \
+    fprintf(stderr, "%d release lock\n", getpid());
 
 
 union semun{
